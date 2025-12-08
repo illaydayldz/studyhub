@@ -1,10 +1,49 @@
-/* Minimalist Kart To-Do Listesi CSS'i (Sütun 1) */
+/* GENEL VE GRID YAPISI */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7; /* Açık gri dış arka plan */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.calisma-alani {
+    /* 4 Sütunlu Yapıyı kuruyoruz */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr 1.2fr; /* 4 sütun oluştur */
+    gap: 20px; /* Sütunlar arasındaki boşluk */
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 90vh; 
+}
+
+.sutun {
+    background-color: #ffffff; /* Sütunların (panellerin) arka planı beyaz */
+    border-radius: 8px; /* Köşe yuvarlaklığı */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Hafif gölge efekti */
+    padding: 20px;
+    overflow-y: auto; /* İçerik taşarsa dikey kaydırma çubuğu */
+    display: flex;
+    flex-direction: column;
+}
+
+.sutun h2 {
+    color: #333;
+    font-size: 1.2em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* MİNİMALİST KART TO-DO LİSTESİ CSS'İ (Sütun 1) */
 
 .to-do-baslik {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: none; /* Alt çizgiyi kaldırıyoruz */
+    border-bottom: none; 
     padding-bottom: 0;
     margin-bottom: 15px;
 }
@@ -17,21 +56,21 @@
 }
 
 .gorev-karti-listesi {
-    list-style: none;
+    list-style: none; /* Madde işaretlerini kaldırır */
     padding: 0;
     margin: 0;
     flex-grow: 1;
 }
 
 .gorev-karti {
-    background-color: #fcfcfc; /* Hafif kirli beyaz arka plan */
+    background-color: #fcfcfc; 
     border: 1px solid #eee;
     border-radius: 12px; /* Yumuşak köşe */
     margin-bottom: 10px;
     padding: 12px 15px;
     display: flex;
     align-items: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); /* Çok hafif gölge */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); 
 }
 
 .gorev-karti label {
@@ -43,7 +82,7 @@
 
 /* Checkbox (Onay Kutusu) Stili */
 .gorev-karti input[type="checkbox"] {
-    appearance: none;
+    appearance: none; /* Varsayılan stili kaldır */
     width: 20px;
     height: 20px;
     border: 2px solid #ccc;
@@ -75,7 +114,7 @@
     color: #999;
 }
 
-/* Yeni Görev Ekleme Alanı (Listeye Entegre) */
+/* Yeni Görev Ekleme Alanı */
 .gorev-karti.yeni-ekle {
     background-color: #fff;
     border: 1px dashed #ddd; /* Kesikli sınır */
@@ -90,4 +129,18 @@
     font-style: italic;
     color: #555;
     background-color: transparent;
+}
+
+/* RESPONSIVE DESIGN (Önceki Koddan Korunmuştur) */
+@media (max-width: 1024px) {
+    .calisma-alani {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .calisma-alani {
+        grid-template-columns: 1fr;
+    }
 }
