@@ -52,3 +52,95 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* Öncelik Matrisi (Sütun 1) CSS Kuralları */
+.oncelik-matrisi {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2x2 düzen için 2 sütun */
+    grid-template-rows: auto auto; /* 2 satır */
+    gap: 10px;
+    flex-grow: 1; 
+}
+
+.kadran {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    min-height: 150px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Kadranlar için hafif gölge */
+}
+
+.kadran h3 {
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Başlık Renkleri (Matrisin Dört Bölgesi) */
+#acil-onemli h3 { color: #e74c3c; /* Kırmızı: Yapılmalı */ } 
+#onemli-degil h3 { color: #2ecc71; /* Yeşil: Planlanmalı */ }
+#acil-onemsiz h3 { color: #f39c12; /* Turuncu: Delege Edilmeli */ }
+#onemsiz-degil h3 { color: #3498db; /* Mavi: Silinmeli/Sonraya Bırakılmalı */ }
+
+.gorev-listesi {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+}
+
+.gorev-listesi li {
+    padding: 7px 5px;
+    cursor: grab; 
+    border-bottom: 1px dotted #f0f0f0;
+    transition: background-color 0.2s;
+}
+
+.gorev-listesi li:hover {
+    background-color: #f9f9f9;
+}
+
+.gorev-listesi li:last-child {
+    border-bottom: none;
+}
+
+.sure {
+    float: right;
+    background-color: #eee;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+/* Görev Ekleme Alanı Stili */
+.gorev-ekle {
+    display: flex;
+    margin-top: 15px;
+}
+
+.gorev-ekle input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 0.9em;
+}
+
+.gorev-ekle button {
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.gorev-ekle button:hover {
+    background-color: #2980b9;
+}
+
