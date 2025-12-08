@@ -1,94 +1,66 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f7f7; 
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
-    min-height: 100vh;
-}
+/* Minimalist Kart To-Do Listesi CSS'i (Sütun 1) */
 
-.calisma-alani {
-    /* 4 Sütunlu Yapıyı kuruyoruz */
-    display: grid;
-    /* 1fr 1fr 1.2fr 1.2fr: 4 sütun oluştur ve 3. ve 4. sütunları biraz geniş yap */
-    grid-template-columns: 1fr 1fr 1.2fr 1.2fr;
-    gap: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-    height: 90vh; 
-}
-
-.sutun {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    padding: 20px;
-    overflow-y: auto; 
+.to-do-baslik {
     display: flex;
-    flex-direction: column;
-}
-
-.sutun h2 {
-    color: #333;
-    font-size: 1.2em;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-top: 0;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none; /* Alt çizgiyi kaldırıyoruz */
+    padding-bottom: 0;
     margin-bottom: 15px;
 }
 
-/* Mobil cihazlar için uyumluluk */
-@media (max-width: 1024px) {
-    .calisma-alani {
-        /* Tabletlerde 2 sütunlu düzen */
-        grid-template-columns: 1fr 1fr;
-        height: auto;
-    }
+.ekle-simge {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #3498db;
+    cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    .calisma-alani {
-        /* Mobil cihazlarda tek sütunlu düzen */
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Minimalist To-Do Listesi CSS'i (Sütun 1) */
-.basit-gorev-listesi {
+.gorev-karti-listesi {
     list-style: none;
     padding: 0;
-    margin: 10px 0;
+    margin: 0;
     flex-grow: 1;
 }
 
-.basit-gorev-listesi li {
-    display: flex; /* İçeriklerin yan yana hizalanması */
+.gorev-karti {
+    background-color: #fcfcfc; /* Hafif kirli beyaz arka plan */
+    border: 1px solid #eee;
+    border-radius: 12px; /* Yumuşak köşe */
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    display: flex;
     align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #f5f5f5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); /* Çok hafif gölge */
+}
+
+.gorev-karti label {
+    flex-grow: 1;
     font-size: 0.95em;
+    color: #333;
+    line-height: 1.2;
 }
 
 /* Checkbox (Onay Kutusu) Stili */
-.basit-gorev-listesi input[type="checkbox"] {
-    appearance: none; /* Varsayılan stili kaldır */
-    width: 18px;
-    height: 18px;
+.gorev-karti input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
     border: 2px solid #ccc;
-    border-radius: 4px; /* Hafif yuvarlak köşeler */
+    border-radius: 6px; /* Hafif yuvarlak köşe */
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 15px;
     position: relative;
     top: -1px; 
 }
 
-.basit-gorev-listesi input[type="checkbox"]:checked {
+.gorev-karti input[type="checkbox"]:checked {
     background-color: #2ecc71; /* Yeşil dolgu */
     border-color: #2ecc71;
 }
 
-.basit-gorev-listesi input[type="checkbox"]:checked::after {
-    content: '✓'; /* Tik işareti */
+.gorev-karti input[type="checkbox"]:checked::after {
+    content: '✓';
     color: white;
     font-size: 14px;
     position: absolute;
@@ -97,68 +69,25 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.basit-gorev-listesi label {
-    flex-grow: 1; /* Etiket metninin alanı kaplaması */
-    line-height: 1.2;
-}
-
 /* Tamamlanan Görev Stili */
-.basit-gorev-listesi li.tamamlandi label {
+.gorev-karti.tamamlandi label {
     text-decoration: line-through;
     color: #999;
 }
 
-/* Konu Etiketi (Minimalist) */
-.konu-etiketi {
-    font-size: 0.75em;
-    padding: 3px 6px;
-    border-radius: 4px;
-    margin-left: 10px;
-    font-weight: 600;
+/* Yeni Görev Ekleme Alanı (Listeye Entegre) */
+.gorev-karti.yeni-ekle {
+    background-color: #fff;
+    border: 1px dashed #ddd; /* Kesikli sınır */
+    padding: 8px 15px;
 }
 
-.konu-etiketi.sql {
-    background-color: #e6f7ff;
-    color: #3498db;
-}
-
-.konu-etiketi.python {
-    background-color: #fce7f6;
-    color: #c0392b;
-}
-
-/* Yenilikçi Görev Ekleme Alanı (Alt kısım) */
-.gorev-ekle-minimal {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    border-top: 1px solid #eee; /* Üstten ayıran ince çizgi */
-    margin-top: auto; /* Listeden sonra her zaman en altta kalmasını sağlar */
-}
-
-.gorev-ekle-minimal input {
+.yeni-gorev-input {
     flex-grow: 1;
     border: none;
-    outline: none; /* Odaklanmada çerçeve olmasın */
-    padding: 5px;
+    outline: none;
     font-size: 0.95em;
-    font-style: italic; /* Yer tutucu metni hafif eğik yapabiliriz */
+    font-style: italic;
     color: #555;
-}
-
-.gorev-ekle-minimal button {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%; /* Dairesel buton */
-    border: none;
-    background-color: #3498db;
-    color: white;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    line-height: 1; /* '+' işaretinin ortalanması */
-}
-
-.gorev-ekle-minimal button:hover {
-    background-color: #2980b9;
+    background-color: transparent;
 }
