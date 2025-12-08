@@ -144,6 +144,7 @@ body {
     border-radius: 8px;
     padding: 10px;
     background-color: #fcfcfc;
+    overflow-x: auto;
 }
 
 .aylik-baslik {
