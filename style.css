@@ -172,6 +172,7 @@ body {
 .aylik-takip-matrisi {
     width: 100%;
     border-collapse: collapse;
+    min-width: 600px;
 }
 
 .aylik-takip-matrisi th, .aylik-takip-matrisi td {
