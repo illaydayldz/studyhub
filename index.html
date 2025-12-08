@@ -1,27 +1,23 @@
-<h2>✅ Yapılacaklar Listesi</h2>
+<h2 class="to-do-baslik">Yapılacaklar Listesi <span class="ekle-simge">+</span></h2>
 
-<ul class="basit-gorev-listesi">
-    <li class="tamamlandi">
-        <input type="checkbox" id="gorev1" checked>
-        <label for="gorev1">SQL JOIN Alıştırması</label>
-        <span class="konu-etiketi sql">SQL</span>
+<ul class="gorev-karti-listesi">
+    <li class="gorev-karti tamamlandi">
+        <input type="checkbox" id="gorevA" checked>
+        <label for="gorevA">SQL JOIN Alıştırması</label>
     </li>
-    <li>
-        <input type="checkbox" id="gorev2">
-        <label for="gorev2">Python Temelleri Tekrarı</label>
-        <span class="konu-etiketi python">Python</span>
+    <li class="gorev-karti">
+        <input type="checkbox" id="gorevB">
+        <label for="gorevB">Python Temelleri Tekrarı</label>
     </li>
-    <li>
-        <input type="checkbox" id="gorev3">
-        <label for="gorev3">Yeni Notları Yükle (Kapsam Analizi İçin)</label>
+    <li class="gorev-karti">
+        <input type="checkbox" id="gorevC">
+        <label for="gorevC">Yeni Notları Yükle</label>
     </li>
-    <li>
-        <input type="checkbox" id="gorev4">
-        <label for="gorev4">Hata Bankası: En Sık Tekrarlanan Hatayı İncele</label>
+    <li class="gorev-karti">
+        <input type="checkbox" id="gorevD">
+        <label for="gorevD">Hata Bankası: En Sık Tekrarlanan Hatayı İncele</label>
+    </li>
+    <li class="gorev-karti yeni-ekle">
+        <input type="text" placeholder="Yeni Görev Ekle..." class="yeni-gorev-input">
     </li>
 </ul>
-
-<div class="gorev-ekle-minimal">
-    <input type="text" placeholder="Yeni Görev Ekle...">
-    <button aria-label="Ekle">+</button>
-</div>
