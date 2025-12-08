@@ -1,36 +1,33 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akıllı Öğrenme Konsolu</title>
-    <link rel="stylesheet" href="style.css"> </head>
-<body>
+<div class="oncelik-matrisi">
+    <div class="kadran" id="acil-onemli">
+        <h3>Önemli & Acil 🔴</h3>
+        <ul class="gorev-listesi">
+            <li data-gorev-id="1">SQL JOIN Hatalarını Gider (Hata Bankası) <span class="sure">45dk</span></li>
+        </ul>
+    </div>
 
-    <main class="calisma-alani">
+    <div class="kadran" id="onemli-degil">
+        <h3>Önemli & Acil Değil 🟢</h3>
+        <ul class="gorev-listesi">
+            <li data-gorev-id="2">Yeni Pandas Notlarını Yükle ve Analiz Et</li>
+        </ul>
+    </div>
+    
+    <div class="kadran" id="acil-onemsiz">
+        <h3>Önemli Değil & Acil 🟠</h3>
+        <ul class="gorev-listesi">
+            <li data-gorev-id="3">E-postalara Yanıt Ver</li>
+        </ul>
+    </div>
 
-        <section class="sutun sutun-yapilacaklar">
-            <h2>✅ Yapılacaklar Listesi (Öncelik Matrisi)</h2>
-            <p>Görevler buraya gelecek.</p>
-        </section>
-
-        <section class="sutun sutun-takip">
-            <h2>📈 Takip Çizelgesi (Kalıcılık Puanı)</h2>
-            <p>Grafikler ve Kalıcılık Puanı buraya gelecek.</p>
-        </section>
-
-        <section class="sutun sutun-notlar">
-            <h2>☁️ Notlarım & Kartlar (Kaynak Analizi)</h2>
-            <p>Yüklenen dosyalar ve otomatik Flashcard oluşturma butonu buraya gelecek.</p>
-        </section>
-
-        <section class="sutun sutun-ai">
-            <h2>🤖 AI Koçu (Sokratik Sorgulama)</h2>
-            <p>Sohbet arayüzü ve Mod Seçici buraya gelecek.</p>
-        </section>
-
-    </main>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    <div class="kadran" id="onemsiz-degil">
+        <h3>Önemli Değil & Acil Değil 🔵</h3>
+        <ul class="gorev-listesi">
+            <li data-gorev-id="4">Yeni AI araçlarını araştır</li>
+        </ul>
+    </div>
+</div>
+<div class="gorev-ekle">
+    <input type="text" placeholder="Yeni Görev Ekle...">
+    <button>+</button>
+</div>
