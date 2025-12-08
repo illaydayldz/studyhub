@@ -1,7 +1,7 @@
 /* GENEL VE GRID YAPISI */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f7f7; /* Açık gri dış arka plan */
+    background-color: #f7f7f7; 
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
@@ -11,19 +11,19 @@ body {
 .calisma-alani {
     /* 4 Sütunlu Yapıyı kuruyoruz */
     display: grid;
-    grid-template-columns: 1fr 1fr 1.2fr 1.2fr; /* 4 sütun oluştur */
-    gap: 20px; /* Sütunlar arasındaki boşluk */
+    grid-template-columns: 1fr 1fr 1.2fr 1.2fr; 
+    gap: 20px; 
     max-width: 1400px;
     margin: 0 auto;
     height: 90vh; 
 }
 
 .sutun {
-    background-color: #ffffff; /* Sütunların (panellerin) arka planı beyaz */
-    border-radius: 8px; /* Köşe yuvarlaklığı */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Hafif gölge efekti */
+    background-color: #ffffff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
     padding: 20px;
-    overflow-y: auto; /* İçerik taşarsa dikey kaydırma çubuğu */
+    overflow-y: auto; 
     display: flex;
     flex-direction: column;
 }
@@ -37,7 +37,8 @@ body {
     margin-bottom: 15px;
 }
 
-/* MİNİMALİST KART TO-DO LİSTESİ CSS'İ (Sütun 1) */
+
+/* SÜTUN 1: MİNİMALİST KART TO-DO LİSTESİ CSS'İ */
 
 .to-do-baslik {
     display: flex;
@@ -65,7 +66,7 @@ body {
 .gorev-karti {
     background-color: #fcfcfc; 
     border: 1px solid #eee;
-    border-radius: 12px; /* Yumuşak köşe */
+    border-radius: 12px; 
     margin-bottom: 10px;
     padding: 12px 15px;
     display: flex;
@@ -82,11 +83,11 @@ body {
 
 /* Checkbox (Onay Kutusu) Stili */
 .gorev-karti input[type="checkbox"] {
-    appearance: none; /* Varsayılan stili kaldır */
+    appearance: none; 
     width: 20px;
     height: 20px;
     border: 2px solid #ccc;
-    border-radius: 6px; /* Hafif yuvarlak köşe */
+    border-radius: 6px; 
     cursor: pointer;
     margin-right: 15px;
     position: relative;
@@ -94,7 +95,7 @@ body {
 }
 
 .gorev-karti input[type="checkbox"]:checked {
-    background-color: #2ecc71; /* Yeşil dolgu */
+    background-color: #2ecc71; 
     border-color: #2ecc71;
 }
 
@@ -108,7 +109,6 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* Tamamlanan Görev Stili */
 .gorev-karti.tamamlandi label {
     text-decoration: line-through;
     color: #999;
@@ -117,7 +117,7 @@ body {
 /* Yeni Görev Ekleme Alanı */
 .gorev-karti.yeni-ekle {
     background-color: #fff;
-    border: 1px dashed #ddd; /* Kesikli sınır */
+    border: 1px dashed #ddd; 
     padding: 8px 15px;
 }
 
@@ -131,29 +131,19 @@ body {
     background-color: transparent;
 }
 
-/* RESPONSIVE DESIGN (Önceki Koddan Korunmuştur) */
-@media (max-width: 1024px) {
-    .calisma-alani {
-        grid-template-columns: 1fr 1fr;
-        height: auto;
-    }
+
+/* SÜTUN 2: AYLIK PERFORMANS ANALİZİ CSS'İ */
+
+.analiz-ana-baslik {
+    margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-    .calisma-alani {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* AYLIK PERFORMANS ANALİZİ (Sütun 2) CSS Kuralları */
-
-.aylik-takip {
+.aylik-takip-kapsayici {
     margin-bottom: 20px;
     border: 1px solid #eee;
     border-radius: 8px;
     padding: 10px;
     background-color: #fcfcfc;
-    overflow-x: auto; /* Yatay kaydırma çubuğu */
 }
 
 .aylik-baslik {
@@ -181,18 +171,17 @@ body {
 .aylik-takip-matrisi {
     width: 100%;
     border-collapse: collapse;
-    min-width: 500px; /* Matrisin kaydırılabilir olması için minimum genişlik */
 }
 
 .aylik-takip-matrisi th, .aylik-takip-matrisi td {
-    padding: 5px;
+    padding: 5px 3px;
     text-align: center;
-    border: 1px solid #f0f0f0;
+    border: none;
     vertical-align: middle;
 }
 
 .aylik-takip-matrisi th {
-    font-size: 0.85em;
+    font-size: 0.8em;
     font-weight: 500;
     color: #666;
 }
@@ -200,14 +189,14 @@ body {
 .alan-etiketi {
     text-align: left;
     font-weight: 600;
-    padding-left: 10px !important;
-    width: 100px;
+    padding-left: 5px !important;
+    width: 30%;
 }
 
-/* Alan Renkleri */
-.alan-etiketi.dil { border-left: 4px solid #3498db; }
-.alan-etiketi.kod { border-left: 4px solid #e67e22; }
-.alan-etiketi.aktuerya { border-left: 4px solid #9b59b6; }
+/* Alan Etiketi Renkleri */
+.alan-etiketi.dil { color: #3498db; }
+.alan-etiketi.kod { color: #e67e22; }
+.alan-etiketi.aktuerya { color: #9b59b6; }
 
 /* Kutucuk ve Tamamlanma Stili */
 .kutucuk {
@@ -215,21 +204,30 @@ body {
     height: 16px;
     margin: 0 auto;
     border: 1px solid #ddd;
-    border-radius: 3px;
+    border-radius: 50%; /* Yuvarlak Yapı */
     background-color: #fff;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
-.kutucuk.tamamlandi {
-    background-color: #2ecc71; /* Tamamlandı: Yeşil */
-    border-color: #27ae60;
+.aylik-takip-matrisi tr[data-alan="dil"] .kutucuk.tamamlandi {
+    background-color: #3498db; 
+    border-color: #3498db;
+}
+.aylik-takip-matrisi tr[data-alan="kod"] .kutucuk.tamamlandi {
+    background-color: #e67e22;
+    border-color: #e67e22;
+}
+.aylik-takip-matrisi tr[data-alan="aktuerya"] .kutucuk.tamamlandi {
+    background-color: #9b59b6;
+    border-color: #9b59b6;
 }
 
 
 /* HAFTALIK ANALİZ ÖZETİ ALANI CSS'İ */
 .analiz-ozet {
     padding-top: 15px;
+    margin-top: 20px;
     border-top: 1px solid #eee;
 }
 
@@ -239,17 +237,18 @@ body {
 }
 
 .metrik-ozet {
-    background-color: #fcfcfc;
-    border-radius: 6px;
-    padding: 12px;
+    background-color: #fff; 
+    border-radius: 8px;
+    padding: 15px;
     margin-bottom: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); 
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    border-left: 4px solid #ccc; 
+    border-left: 5px solid; 
 }
 
-/* Analiz Kartı Renkleri */
+/* Analiz Kartı Şerit Renkleri */
 .dil-analiz { border-left-color: #3498db; } 
 .kod-analiz { border-left-color: #e67e22; } 
 .aktuerya-analiz { border-left-color: #9b59b6; } 
@@ -257,22 +256,39 @@ body {
 .alan-isim {
     font-weight: 600;
     font-size: 0.95em;
-    width: 50%;
+    width: 60%;
+    color: #444;
 }
 
 .oran {
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-weight: 700;
-    width: 50%;
+    width: 40%;
     text-align: right;
 }
 
-.oran.basarili { color: #2ecc71; } /* Yeşil */
-.oran.uyari { color: #e74c3c; } /* Kırmızı */
+.oran.basarili { color: #2ecc71; } 
+.oran.uyari { color: #e74c3c; } 
 
 .metrik-ozet p.tavsiye {
     font-size: 0.85em;
     color: #666;
-    margin: 5px 0 0 0;
+    margin: 10px 0 0 0;
     width: 100%;
+    padding-top: 10px;
+    border-top: 1px dotted #eee;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .calisma-alani {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .calisma-alani {
+        grid-template-columns: 1fr;
+    }
 }
