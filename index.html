@@ -1,33 +1,27 @@
-<div class="oncelik-matrisi">
-    <div class="kadran" id="acil-onemli">
-        <h3>Önemli & Acil 🔴</h3>
-        <ul class="gorev-listesi">
-            <li data-gorev-id="1">SQL JOIN Hatalarını Gider (Hata Bankası) <span class="sure">45dk</span></li>
-        </ul>
-    </div>
+<h2>✅ Yapılacaklar Listesi</h2>
 
-    <div class="kadran" id="onemli-degil">
-        <h3>Önemli & Acil Değil 🟢</h3>
-        <ul class="gorev-listesi">
-            <li data-gorev-id="2">Yeni Pandas Notlarını Yükle ve Analiz Et</li>
-        </ul>
-    </div>
-    
-    <div class="kadran" id="acil-onemsiz">
-        <h3>Önemli Değil & Acil 🟠</h3>
-        <ul class="gorev-listesi">
-            <li data-gorev-id="3">E-postalara Yanıt Ver</li>
-        </ul>
-    </div>
+<ul class="basit-gorev-listesi">
+    <li class="tamamlandi">
+        <input type="checkbox" id="gorev1" checked>
+        <label for="gorev1">SQL JOIN Alıştırması</label>
+        <span class="konu-etiketi sql">SQL</span>
+    </li>
+    <li>
+        <input type="checkbox" id="gorev2">
+        <label for="gorev2">Python Temelleri Tekrarı</label>
+        <span class="konu-etiketi python">Python</span>
+    </li>
+    <li>
+        <input type="checkbox" id="gorev3">
+        <label for="gorev3">Yeni Notları Yükle (Kapsam Analizi İçin)</label>
+    </li>
+    <li>
+        <input type="checkbox" id="gorev4">
+        <label for="gorev4">Hata Bankası: En Sık Tekrarlanan Hatayı İncele</label>
+    </li>
+</ul>
 
-    <div class="kadran" id="onemsiz-degil">
-        <h3>Önemli Değil & Acil Değil 🔵</h3>
-        <ul class="gorev-listesi">
-            <li data-gorev-id="4">Yeni AI araçlarını araştır</li>
-        </ul>
-    </div>
-</div>
-<div class="gorev-ekle">
+<div class="gorev-ekle-minimal">
     <input type="text" placeholder="Yeni Görev Ekle...">
-    <button>+</button>
+    <button aria-label="Ekle">+</button>
 </div>
