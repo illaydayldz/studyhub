@@ -57,7 +57,7 @@ body {
 }
 
 .gorev-karti-listesi {
-    list-style: none; /* Madde işaretlerini kaldırır */
+    list-style: none;
     padding: 0;
     margin: 0;
     flex-grow: 1;
@@ -131,16 +131,22 @@ body {
     background-color: transparent;
 }
 
+
 /* SÜTUN 2: AYLIK PERFORMANS ANALİZİ CSS'İ */
 
-/* Kapsayıcıya Yatay Kaydırmayı Zorunlu Kılar */
+.analiz-ana-baslik {
+    margin-bottom: 20px;
+}
+
 .aylik-takip-kapsayici {
     margin-bottom: 20px;
     border: 1px solid #eee;
     border-radius: 8px;
     padding: 10px;
     background-color: #fcfcfc;
-    overflow-x: auto; /* Yatay kaydırma çubuğunu etkinleştirir */
+    /* KAYDIRMA ÇÖZÜMÜ */
+    overflow-x: auto; 
+    /* KAYDIRMA ÇÖZÜMÜ */
 }
 
 .aylik-baslik {
@@ -166,8 +172,9 @@ body {
 
 /* Aylık Takip Matrisi Stilleri */
 .aylik-takip-matrisi {
-    /* Matrisin tamamının görünmesi için gerekli minimum genişlik */
+    /* KAYDIRMA ÇÖZÜMÜ */
     min-width: 800px; 
+    /* KAYDIRMA ÇÖZÜMÜ */
     border-collapse: collapse;
 }
 
@@ -188,13 +195,17 @@ body {
     text-align: left;
     font-weight: 600;
     padding-left: 5px !important;
-    /* Alan Etiketi (Dil Sınavı, Kodlama) için daha fazla yer ayırır */
-    width: 150px; 
+    width: 150px;
 }
 
-/* Kutucuk ve Tamamlanma Stili (Yuvarlak yapı) */
+/* Alan Etiketi Renkleri */
+.alan-etiketi.dil { color: #3498db; }
+.alan-etiketi.kod { color: #e67e22; }
+.alan-etiketi.aktuerya { color: #9b59b6; }
+
+/* Kutucuk ve Tamamlanma Stili */
 .kutucuk {
-    width: 18px; /* Kutucuk boyutunu hafifçe artırır */
+    width: 18px;
     height: 18px;
     margin: 0 auto;
     border: 1px solid #ddd;
@@ -204,13 +215,6 @@ body {
     transition: background-color 0.2s;
 }
 
-/* Kalan Kodlar Aynı Kalır (Renkler ve Analiz Özeti) */
-
-.alan-etiketi.dil { color: #3498db; }
-.alan-etiketi.kod { color: #e67e22; }
-.alan-etiketi.aktuerya { color: #9b59b6; }
-
-/* Tamamlanma Renkleri */
 .aylik-takip-matrisi tr[data-alan="dil"] .kutucuk.tamamlandi {
     background-color: #3498db; 
     border-color: #3498db;
@@ -224,6 +228,72 @@ body {
     border-color: #9b59b6;
 }
 
-/* HAFTALIK ANALİZ ÖZETİ ALANI CSS'İ (Aynı Kalır) */
-/* ... */
 
+/* HAFTALIK ANALİZ ÖZETİ ALANI CSS'İ */
+.analiz-ozet {
+    padding-top: 15px;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.analiz-ozet h3 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.metrik-ozet {
+    background-color: #fff; 
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-left: 5px solid; 
+}
+
+/* Analiz Kartı Şerit Renkleri */
+.dil-analiz { border-left-color: #3498db; } 
+.kod-analiz { border-left-color: #e67e22; } 
+.aktuerya-analiz { border-left-color: #9b59b6; } 
+
+.alan-isim {
+    font-weight: 600;
+    font-size: 0.95em;
+    width: 60%;
+    color: #444;
+}
+
+.oran {
+    font-size: 1.6em;
+    font-weight: 700;
+    width: 40%;
+    text-align: right;
+}
+
+.oran.basarili { color: #2ecc71; } 
+.oran.uyari { color: #e74c3c; } 
+
+.metrik-ozet p.tavsiye {
+    font-size: 0.85em;
+    color: #666;
+    margin: 10px 0 0 0;
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px dotted #eee;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .calisma-alani {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .calisma-alani {
+        grid-template-columns: 1fr;
+    }
+}
