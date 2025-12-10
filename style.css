@@ -156,7 +156,7 @@ body {
 }
 
 .aylik-takip-kapsayici {
-    margin-bottom: 20px;
+    margin-bottom: 80px;
     border: 1px solid #eee;
     border-radius: 8px;
     padding: 10px;
@@ -188,7 +188,7 @@ body {
 
 /* Aylık Takip Matrisi Stilleri */
 .aylik-takip-matrisi {
-    min-width: 800px; 
+    min-width: 1000px; 
     border-collapse: collapse;
 }
 
