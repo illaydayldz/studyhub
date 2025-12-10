@@ -173,7 +173,7 @@ body {
 
 /* Aylık Takip Matrisi Stilleri */
 .aylik-takip-matrisi {
-    min-width: 800px; 
+    min-width: 500px; 
     border-collapse: collapse;
 }
 
