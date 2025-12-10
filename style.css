@@ -1,76 +1,33 @@
-/* =========================================================
-   GENEL ve GRID YAPISI
-========================================================= */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f7f7;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
-    min-height: 100vh;
-}
-
-.calisma-alani {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.2fr 1.2fr;
-    gap: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-    height: 90vh;
-}
-
-.sutun {
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    padding: 24px;
-    overflow-y: auto;
+/* Performans Analizi Kartı */
+.sutun-analiz-karti {
+    background: white;
+    padding: 25px;
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
-.sutun h2 {
-    color: #333;
-    font-size: 1.4em;
-    margin-top: 0;
-    margin-bottom: 15px;
-    border-bottom: none;
-}
-
-/* =========================================================
-   SÜTUN 2 — PERFORMANS ANALİZİ KARTI
-========================================================= */
-.sutun-analiz-karti {
-    padding: 24px;
-    border-radius: 20px;
-    background: #fff;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-}
-
-/* Başlık Alanı */
+/* Başlık */
 .analiz-ana-baslik {
-    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* ---------------------------------------------------------
-   Aylık Takip Kutusu (2. görseldeki gibi)
---------------------------------------------------------- */
+/* Aylık Takip Kartı */
 .aylik-takip-kapsayici {
     background: #ffffff;
-    padding: 20px;
+    padding: 22px;
     border-radius: 18px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-
-    /* Tasarımda taşma görünmüyor → scroll bar gizlendi */
-    overflow-x: auto;
-    scrollbar-width: none;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
 }
 
-.aylik-takip-kapsayici::-webkit-scrollbar {
-    display: none;
-}
-
-/* Başlık + Ay Navigasyonu */
+/* Üst Başlık (Aylık Alışkanlık Takibi + navigator) */
 .aylik-baslik {
     display: flex;
     justify-content: space-between;
@@ -80,123 +37,41 @@ body {
 
 .aylik-baslik h3 {
     margin: 0;
-    font-size: 1.1em;
+    font-size: 20px;
     font-weight: 600;
 }
 
-.aylik-baslik .navigasyon {
-    font-size: 0.9em;
-    color: #3498db;
+.navigasyon {
+    font-size: 14px;
+    color: #3277ff;
     cursor: pointer;
 }
 
-/* ---------------------------------------------------------
-   Aylık Takip Matrisi
---------------------------------------------------------- */
+/* Tablo görünümü */
 .aylik-takip-matrisi {
-    min-width: 800px;
-    border-collapse: collapse;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 4px;
 }
 
 .aylik-takip-matrisi th,
 .aylik-takip-matrisi td {
     text-align: center;
-    padding: 6px 2px;
-    border: none;
+    padding: 6px;
+    font-size: 13px;
+    color: #555;
 }
 
-.alan-etiketi {
-    width: 120px;
-    text-align: left;
-    font-weight: 600;
-    padding-left: 5px !important;
-}
-
-/* Renk setleri */
-.alan-etiketi.dil { color: #3498db; }
-.alan-etiketi.kod { color: #e67e22; }
-.alan-etiketi.aktuerya { color: #9b59b6; }
-
-/* Nokta kutuları */
+/* Kutucuk tasarımı */
 .kutucuk {
-    width: 14px;
-    height: 14px;
-    margin: 0 auto;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #d6d6d6;
     border-radius: 50%;
-    border: 1px solid #ddd;
-    transition: 0.2s;
-    cursor: pointer;
+    margin: auto;
 }
 
-/* Tamamlanan renkleri */
-tr[data-alan="dil"] .kutucuk.tamamlandi {
-    background: #3498db;
-    border-color: #3498db;
-}
-tr[data-alan="kod"] .kutucuk.tamamlandi {
-    background: #e67e22;
-    border-color: #e67e22;
-}
-tr[data-alan="aktuerya"] .kutucuk.tamamlandi {
-    background: #9b59b6;
-    border-color: #9b59b6;
-}
-
-/* ---------------------------------------------------------
-   Haftalık Analiz Özeti
---------------------------------------------------------- */
-.analiz-ozet {
-    margin-top: 25px;
-    padding-top: 15px;
-    border-top: 1px solid #eee;
-}
-
-.metrik-ozet {
-    background: #fff;
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    border-left: 6px solid;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-}
-
-.dil-analiz { border-left-color: #3498db; }
-.kod-analiz { border-left-color: #e67e22; }
-.aktuerya-analiz { border-left-color: #9b59b6; }
-
-.alan-isim {
-    width: 60%;
-    font-weight: 600;
-}
-
-.oran {
-    width: 40%;
-    text-align: right;
-    font-size: 1.5em;
-    font-weight: 700;
-}
-
-.oran.basarili { color: #2ecc71; }
-.oran.uyari { color: #e74c3c; }
-
-.metrik-ozet p.tavsiye {
-    width: 100%;
-    font-size: 0.85em;
-    color: #666;
-    border-top: 1px dotted #eee;
-    padding-top: 8px;
-    margin-top: 8px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-    .calisma-alani {
-        grid-template-columns: 1fr 1fr;
-        height: auto;
-    }
-}
-@media (max-width: 768px) {
-    .calisma-alani {
-        grid-template-columns: 1fr;
-    }
+.kutucuk.tamamlandi {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
 }
