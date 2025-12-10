@@ -183,6 +183,9 @@ body {
     text-align: center;
     border: none;
     vertical-align: middle;
+    /* BOYUT OPTİMİZASYONU */
+    width: 30px; 
+    min-width: 30px;
 }
 
 .aylik-takip-matrisi th {
@@ -195,7 +198,9 @@ body {
     text-align: left;
     font-weight: 600;
     padding-left: 5px !important;
-    width: 150px;
+    /* BOYUT OPTİMİZASYONU */
+    width: 120px;
+    min-width: 120px;
 }
 
 /* Alan Etiketi Renkleri */
@@ -205,8 +210,9 @@ body {
 
 /* Kutucuk ve Tamamlanma Stili */
 .kutucuk {
-    width: 18px;
-    height: 18px;
+    /* BOYUT OPTİMİZASYONU */
+    width: 16px; 
+    height: 16px;
     margin: 0 auto;
     border: 1px solid #ddd;
     border-radius: 50%; /* Yuvarlak Yapı */
