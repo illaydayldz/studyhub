@@ -1,77 +1,415 @@
-/* Performans Analizi Kartı */
-.sutun-analiz-karti {
-    background: white;
-    padding: 25px;
-    border-radius: 22px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+/* GENEL VE GRID YAPISI */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7; 
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.calisma-alani {
+    /* 4 Sütunlu Yapıyı kuruyoruz */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr 1.2fr; 
+    gap: 20px; 
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 90vh; 
+}
+
+.sutun {
+    background-color: #ffffff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
+    padding: 20px;
+    overflow-y: auto; 
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
-/* Başlık */
-.analiz-ana-baslik {
-    font-size: 26px;
-    font-weight: 700;
+.sutun h2 {
     color: #333;
+    font-size: 1.2em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+
+/* SÜTUN 1: MİNİMALİST KART TO-DO LİSTESİ CSS'İ */
+
+.to-do-baslik {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none; 
+    padding-bottom: 0;
+    margin-bottom: 15px;
+}
+
+.ekle-simge {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #3498db;
+    cursor: pointer;
+}
+
+.gorev-karti-listesi {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.gorev-karti {
+    background-color: #fcfcfc; 
+    border: 1px solid #eee;
+    border-radius: 12px; 
+    margin-bottom: 10px;
+    padding: 12px 15px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); 
 }
 
-/* Aylık Takip Kartı */
+.gorev-karti label {
+    flex-grow: 1;
+    font-size: 0.95em;
+    color: #333;
+    line-height: 1.2;
+}
+
+/* Checkbox (Onay Kutusu) Stili */
+.gorev-karti input[type="checkbox"] {
+    appearance: none; 
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 6px; 
+    cursor: pointer;
+    margin-right: 15px;
+    position: relative;
+    top: -1px; 
+}
+
+.gorev-karti input[type="checkbox"]:checked {
+    background-color: #2ecc71; 
+    border-color: #2ecc71;
+}
+
+.gorev-karti input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gorev-karti.tamamlandi label {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Yeni Görev Ekleme Alanı */
+.gorev-karti.yeni-ekle {
+    background-color: #fff;
+    border: 1px dashed #ddd; 
+    padding: 8px 15px;
+}
+
+.yeni-gorev-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 0.95em;
+    font-style: italic;
+    color: #555;
+    background-color: transparent;
+}
+
+
+/* SÜTUN 2: AYLIK PERFORMANS ANALİZİ CSS'İ */
+
+/* YENİ KART STİLİ (Sütun 2'nin kendisi için) */
+.sutun-analiz-karti {
+    padding: 24px; 
+    border-radius: 20px; 
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06); 
+    min-height: 500px; 
+    background: #fff;
+}
+
+.sutun-analiz-karti h2 {
+    border-bottom: none; 
+    margin-bottom: 20px;
+    padding-bottom: 0;
+}
+/* YENİ KART STİLİ SONU */
+
+
+.analiz-ana-baslik {
+    margin-bottom: 20px;
+}
+
 .aylik-takip-kapsayici {
-    background: #ffffff;
-    padding: 22px;
-    border-radius: 18px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fcfcfc;
+    /* KAYDIRMA ÇÖZÜMÜ */
+    overflow-x: auto; 
 }
 
-/* Üst Başlık (Aylık Alışkanlık Takibi + navigator) */
 .aylik-baslik {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .aylik-baslik h3 {
-    margin: 0;
-    font-size: 20px;
+    font-size: 1em;
     font-weight: 600;
+    margin: 0;
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
-.navigasyon {
-    font-size: 14px;
-    color: #3277ff;
+.aylik-baslik .navigasyon {
+    font-size: 0.8em;
+    color: #3498db;
     cursor: pointer;
 }
 
-/* Tablo görünümü */
+/* Aylık Takip Matrisi Stilleri */
 .aylik-takip-matrisi {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 4px;
+    min-width: 800px; 
+    border-collapse: collapse;
 }
 
-.aylik-takip-matrisi th,
-.aylik-takip-matrisi td {
+.aylik-takip-matrisi th, .aylik-takip-matrisi td {
+    padding: 5px 2px;
     text-align: center;
-    padding: 6px;
-    font-size: 13px;
-    color: #555;
+    border: none;
+    vertical-align: middle;
+    /* BOYUT OPTİMİZASYONU */
+    width: 25px; 
+    min-width: 25px;
 }
 
-/* Kutucuk tasarımı */
+.aylik-takip-matrisi th {
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #666;
+}
+
+.alan-etiketi {
+    text-align: left;
+    font-weight: 600;
+    padding-left: 5px !important;
+    /* BOYUT OPTİMİZASYONU */
+    width: 100px;
+    min-width: 100px;
+}
+
+/* Alan Etiketi Renkleri */
+.alan-etiketi.dil { color: #3498db; }
+.alan-etiketi.kod { color: #e67e22; }
+.alan-etiketi.aktuerya { color: #9b59b6; }
+
+/* Kutucuk ve Tamamlanma Stili */
 .kutucuk {
-    width: 18px;
-    height: 18px;
-    border: 2px solid #d6d6d6;
-    border-radius: 50%;
-    margin: auto;
+    width: 14px; 
+    height: 14px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 50%; 
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.kutucuk.tamamlandi {
-    background-color: #4CAF50;
-    border-color: #4CAF50;
+.aylik-takip-matrisi tr[data-alan="dil"] .kutucuk.tamamlandi {
+    background-color: #3498db; 
+    border-color: #3498db;
+}
+.aylik-takip-matrisi tr[data-alan="kod"] .kutucuk.tamamlandi {
+    background-color: #e67e22;
+    border-color: #e67e22;
+}
+.aylik-takip-matrisi tr[data-alan="aktuerya"] .kutucuk.tamamlandi {
+    background-color: #9b59b6;
+    border-color: #9b59b6;
+}
+
+
+/* HAFTALIK ANALİZ ÖZETİ ALANI CSS'İ */
+.analiz-ozet {
+    padding-top: 15px;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.analiz-ozet h3 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.metrik-ozet {
+    background-color: #fff; 
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-left: 5px solid; 
+}
+
+/* Analiz Kartı Şerit Renkleri */
+.dil-analiz { border-left-color: #3498db; } 
+.kod-analiz { border-left-color: #e67e22; } 
+.aktuerya-analiz { border-left-color: #9b59b6; } 
+
+.alan-isim {
+    font-weight: 600;
+    font-size: 0.95em;
+    width: 60%;
+    color: #444;
+}
+
+.oran {
+    font-size: 1.6em;
+    font-weight: 700;
+    width: 40%;
+    text-align: right;
+}
+
+.oran.basarili { color: #2ecc71; } 
+.oran.uyari { color: #e74c3c; } 
+
+.metrik-ozet p.tavsiye {
+    font-size: 0.85em;
+    color: #666;
+    margin: 10px 0 0 0;
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px dotted #eee;
+}
+
+/* SÜTUN 3: NOTLARIM & KARTLAR CSS'İ */
+
+.not-ana-baslik {
+    margin-bottom: 20px;
+}
+
+/* Dosya Yükleme Alanı */
+.yukleme-alani {
+    text-align: center;
+    padding: 30px 15px;
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s;
+}
+
+.yukleme-alani:hover {
+    border-color: #3498db;
+}
+
+.yukleme-alani p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.dosya-yukle-buton {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.dosya-yukle-buton:hover {
+    background-color: #2980b9;
+}
+
+/* Flashcard Oluşturma Alanı */
+.flashcard-alani h3 {
+    font-size: 1em;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.flashcard-alani p {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.flashcard-alani textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.flashcard-aksiyonlar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flashcard-aksiyonlar select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+
+.kart-olustur-buton {
+    padding: 8px 15px;
+    background-color: #2ecc71; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.kart-olustur-buton:hover {
+    background-color: #27ae60;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .calisma-alani {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .calisma-alani {
+        grid-template-columns: 1fr;
+    }
 }
