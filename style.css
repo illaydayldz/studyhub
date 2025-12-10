@@ -172,9 +172,7 @@ body {
 
 /* Aylık Takip Matrisi Stilleri */
 .aylik-takip-matrisi {
-    /* KAYDIRMA ÇÖZÜMÜ */
     min-width: 800px; 
-    /* KAYDIRMA ÇÖZÜMÜ */
     border-collapse: collapse;
 }
 
@@ -210,7 +208,6 @@ body {
 
 /* Kutucuk ve Tamamlanma Stili */
 .kutucuk {
-    /* BOYUT OPTİMİZASYONU */
     width: 16px; 
     height: 16px;
     margin: 0 auto;
