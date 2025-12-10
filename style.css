@@ -134,6 +134,23 @@ body {
 
 /* SÜTUN 2: AYLIK PERFORMANS ANALİZİ CSS'İ */
 
+/* YENİ KART STİLİ (Sütun 2'nin kendisi için) */
+.sutun-analiz-karti {
+    padding: 24px; 
+    border-radius: 20px; 
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06); 
+    min-height: 500px; 
+    background: #fff;
+}
+
+.sutun-analiz-karti h2 {
+    border-bottom: none; 
+    margin-bottom: 20px;
+    padding-bottom: 0;
+}
+/* YENİ KART STİLİ SONU */
+
+
 .analiz-ana-baslik {
     margin-bottom: 20px;
 }
@@ -144,8 +161,8 @@ body {
     border-radius: 8px;
     padding: 10px;
     background-color: #fcfcfc;
-    /* KAYDIRMA ÇÖZÜMÜ: Otomatik kaydırma yerine, sığdır. */
-    overflow-x: hidden; 
+    /* KAYDIRMA ÇÖZÜMÜ */
+    overflow-x: auto; 
 }
 
 .aylik-baslik {
@@ -171,16 +188,16 @@ body {
 
 /* Aylık Takip Matrisi Stilleri */
 .aylik-takip-matrisi {
-    /* Kaydırmayı engellemek için minimum genişlikler kaldırıldı */
+    min-width: 800px; 
     border-collapse: collapse;
 }
 
 .aylik-takip-matrisi th, .aylik-takip-matrisi td {
-    padding: 5px 2px; /* İç boşluk azaltıldı */
+    padding: 5px 2px;
     text-align: center;
     border: none;
     vertical-align: middle;
-    /* BOYUT OPTİMİZASYONU: Her gün sütununu daraltır */
+    /* BOYUT OPTİMİZASYONU */
     width: 25px; 
     min-width: 25px;
 }
@@ -195,7 +212,7 @@ body {
     text-align: left;
     font-weight: 600;
     padding-left: 5px !important;
-    /* BOYUT OPTİMİZASYONU: Etiket alanını daraltır */
+    /* BOYUT OPTİMİZASYONU */
     width: 100px;
     min-width: 100px;
 }
@@ -207,12 +224,11 @@ body {
 
 /* Kutucuk ve Tamamlanma Stili */
 .kutucuk {
-    /* BOYUT OPTİMİZASYONU */
     width: 14px; 
     height: 14px;
     margin: 0 auto;
     border: 1px solid #ddd;
-    border-radius: 50%; /* Yuvarlak Yapı */
+    border-radius: 50%; 
     background-color: #fff;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -285,6 +301,103 @@ body {
     width: 100%;
     padding-top: 10px;
     border-top: 1px dotted #eee;
+}
+
+/* SÜTUN 3: NOTLARIM & KARTLAR CSS'İ */
+
+.not-ana-baslik {
+    margin-bottom: 20px;
+}
+
+/* Dosya Yükleme Alanı */
+.yukleme-alani {
+    text-align: center;
+    padding: 30px 15px;
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s;
+}
+
+.yukleme-alani:hover {
+    border-color: #3498db;
+}
+
+.yukleme-alani p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.dosya-yukle-buton {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.dosya-yukle-buton:hover {
+    background-color: #2980b9;
+}
+
+/* Flashcard Oluşturma Alanı */
+.flashcard-alani h3 {
+    font-size: 1em;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.flashcard-alani p {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.flashcard-alani textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.flashcard-aksiyonlar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flashcard-aksiyonlar select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+
+.kart-olustur-buton {
+    padding: 8px 15px;
+    background-color: #2ecc71; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.kart-olustur-buton:hover {
+    background-color: #27ae60;
 }
 
 /* RESPONSIVE DESIGN */
