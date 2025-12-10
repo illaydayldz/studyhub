@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akıllı Öğrenme Konsolu</title>
     <link rel="stylesheet" href="style.css"> 
-
 </head>
 <body>
 
@@ -39,7 +38,7 @@
 
         </section>
 
-        <section class="sutun sutun-takip">
+        <section class="sutun sutun-takip sutun-analiz-karti">
             
             <h2 class="analiz-ana-baslik">📈 Performans Analizi</h2>
 
@@ -187,8 +186,28 @@
         </section>
 
         <section class="sutun sutun-notlar">
-            <h2>☁️ Notlarım & Kartlar (Kaynak Analizi)</h2>
-            <p>Yüklenen dosyalar ve otomatik Flashcard oluşturma butonu buraya gelecek.</p>
+            <h2 class="not-ana-baslik">☁️ Notlarım & Kartlar (Kaynak Analizi)</h2>
+
+            <div class="yukleme-alani">
+                <p>PDF, Word veya Metin dosyanızı buraya sürükleyin.</p>
+                <button class="dosya-yukle-buton">Dosya Seç / Yükle</button>
+            </div>
+
+            <div class="flashcard-alani">
+                <h3>Flashcard Oluşturma</h3>
+                <p>Yüklenen dosyalardan veya yapıştırılan metinlerden otomatik Flashcard setleri oluşturun:</p>
+                
+                <textarea placeholder="Flashcard oluşturmak istediğiniz metni buraya yapıştırın..."></textarea>
+                
+                <div class="flashcard-aksiyonlar">
+                    <select class="alan-secim">
+                        <option value="dil">Dil Sınavı</option>
+                        <option value="kod">Kodlama</option>
+                        <option value="aktuerya">Aktüerya</option>
+                    </select>
+                    <button class="kart-olustur-buton">⚡ Kartları Oluştur</button>
+                </div>
+            </div>
         </section>
 
         <section class="sutun sutun-ai">
@@ -201,4 +220,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
